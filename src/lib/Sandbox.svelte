@@ -35,8 +35,6 @@
 
       for (let j = 0; j < rhythms[i]; j++) {
         let theta = (bpm * date.getTime() / (1000 * 60)) +  j * ((2 * Math.PI) / rhythms[i]);
-        console.log(bpm);
-        //let theta = (date.getTime() / (1000 * 60) + (j * ((2 * Math.PI) / rhythms[i])));
         let x = radius * Math.cos(theta);
         let y = radius * Math.sin(theta);
         let center = coord(ctx, x, y);
@@ -54,8 +52,8 @@
     if (isPlaying.val) {
       let ctx = canvas.getContext("2d");
 
-      ctx.canvas.width = window.innerWidth;
-      ctx.canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
     }
 
     drawRhythms();
@@ -73,8 +71,8 @@
   }
 
   function coord(ctx, x, y) {
-    return [ctx.canvas.width / 2 + x,
-            ctx.canvas.height / 2 + y];
+    return [canvas.width / 2 + x,
+            canvas.height / 2 + y];
   }
 </script>
 

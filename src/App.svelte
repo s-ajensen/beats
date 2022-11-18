@@ -16,8 +16,8 @@
     <source src="boop.mp3" type="audio/mp3"/>
   </audio>
   <div class="grid-container">
-    <Menu {isPlaying} {rhythms} {bpm} />  
-    <Sandbox {isPlaying} {rhythms} {bpm} on:updateBpm={updateBpm} />
+    <Menu {isPlaying} {rhythms} bind:bpm on:updateBpm={updateBpm}/>  
+    <Sandbox {isPlaying} {rhythms} {bpm} />
   </div>
 </main>
 

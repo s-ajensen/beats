@@ -1,7 +1,6 @@
 <script>
     import { createEventDispatcher } from "svelte";
 
-
     const dispatch = createEventDispatcher();
 
     export let isPlaying;
@@ -16,15 +15,11 @@
 <div class="menu-container">
     <div class="menu">
 
-        {#if isPlaying.val}
-            <button on:click={toggle}>Pause</button>
-        {:else}
-            <button on:click={toggle}>Play</button>
-        {/if}
+        <button on:click={toggle}>{#if isPlaying.val}⏸️{:else}▶️{/if}</button>
         <br />
 
         <p>BPM:</p>
-        <input bind:value={bpm} type="number" step="5" on:keypress={() => {dispatch("updateBpm")}}>
+        <input bind:value={bpm} type="number" step="5" />
         <br />
 
         <ul>
